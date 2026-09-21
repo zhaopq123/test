@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>励销云外呼配置卡 · 无人冰淇淋机器人</title>
+<style>
+  :root{
+    --bg:#f4f6f9; --card:#ffffff; --ink:#1a1f2b; --sub:#5b6577; --line:#e3e8ef;
+    --brand:#1d4ed8; --t1:#c0392b; --t2:#c26a1a; --t3:#8a7a1f;
+    --ok:#1f7a4d; --warn:#b8860b;
+  }
+  *{box-sizing:border-box;-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.62;font-size:15px;padding:12px 12px 40px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;margin-bottom:12px;}
+  h1{font-size:19px;margin:0 0 6px;letter-spacing:.2px;}
+  .meta{font-size:12px;color:var(--sub);}
+  h2{font-size:16px;margin:22px 0 10px;padding-left:9px;border-left:4px solid var(--brand);line-height:1.3;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;}
+  .lead{background:#eef3ff;border:1px solid #cfdcff;border-radius:12px;padding:12px 14px;margin-bottom:12px;font-size:14.5px;}
+  .lead b{color:var(--brand);}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  th,td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top;}
+  th{background:#f7f9fc;font-weight:600;color:var(--sub);font-size:12.5px;white-space:nowrap;}
+  tr:last-child td{border-bottom:none;}
+  .badge{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:999px;white-space:nowrap;color:#fff;}
+  .b1{background:var(--t1);} .b2{background:var(--t2);} .b3{background:var(--t3);}
+  .kw{font-family:ui-monospace,Consolas,"Courier New",monospace;font-size:12.5px;background:#f2f5f9;border:1px solid #e0e6ee;border-radius:6px;padding:1px 5px;display:inline-block;margin:1px 2px 1px 0;}
+  .talk{background:#fbfcfe;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:10px;padding:12px;margin:10px 0;}
+  .talk .who{font-size:12.5px;font-weight:700;color:var(--brand);margin-bottom:6px;}
+  .talk p{margin:0;font-size:14px;}
+  .callout{border-radius:11px;padding:12px 14px;margin:12px 0;font-size:14px;}
+  .warnbox{background:#fff7e8;border:1px solid #f2d9a8;}
+  .okbox{background:#eefaf3;border:1px solid #c6e9d6;}
+  .dangerbox{background:#fdeeec;border:1px solid #f4c9c2;}
+  ul{margin:8px 0 0;padding-left:20px;}
+  li{margin-bottom:6px;}
+  code{font-family:ui-monospace,Consolas,monospace;font-size:12.5px;background:#f2f5f9;border:1px solid #e0e6ee;border-radius:5px;padding:1px 5px;}
+  .steps li{margin-bottom:7px;}
+  footer{margin-top:22px;padding-top:12px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--sub);}
+  .src{font-size:11.5px;color:var(--sub);margin-top:6px;}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  /* 话术区块专用，其余样式不受影响 */
+  .scn{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;}
+  .scn h3{font-size:15px;margin:0 0 11px;color:var(--brand);letter-spacing:.2px;line-height:1.35;}
+  .row{margin:0 0 11px;}
+  .lbl{display:inline-block;font-size:11.5px;font-weight:700;color:#fff;background:#9aa3b0;border-radius:5px;padding:2px 7px;margin-bottom:5px;letter-spacing:.2px;}
+  .lbl.open{background:var(--brand);}
+  .lbl.ask{background:#b06a12;}
+  .lbl.no{background:#8b919b;}
+  .tx{margin:0;padding-left:11px;border-left:2px solid #e3e8ef;font-size:14.5px;}
+  .tx em{font-style:normal;color:var(--sub);font-size:12.5px;display:block;margin-top:3px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>励销云外呼配置卡</h1>
+  <div class="meta">无人冰淇淋机器人（JZ-ICBOT-I-01）｜ 对外主体：北京星具探索 ｜ 2026-09-21</div>
+</header>
+
+<div class="lead">
+  <b>先记住一句话：</b>励销云里的「行业」是<strong>粗筛抽屉</strong>（按工商登记把公司归类），<strong>「关键词」才是决定名单质量的那个动作</strong>。<br>
+  你想找的客户，和它被登记在哪个行业里，<strong>常常不是一回事</strong>——不要靠行业门类去"推理"客户，靠关键词去"命中"客户。
+</div>
+
+<h2>一、门类勾哪个（4 个抽屉，按轮次开）</h2>
+<div class="card scroll">
+  <table>
+    <tr><th>轮次</th><th>勾这个门类</th><th>展开后往下找</th><th>为什么是它</th></tr>
+    <tr>
+      <td><span class="badge b1">第 1 轮</span></td>
+      <td>文化、体育和娱乐业</td>
+      <td>娱乐业 / 游乐园 / 室内娱乐活动 / 游艺</td>
+      <td>亲子乐园、电玩城、网红场馆都登记在这里</td>
+    </tr>
+    <tr>
+      <td><span class="badge b1">第 1 轮</span></td>
+      <td>批发和零售业</td>
+      <td><strong>无店铺及其他零售业</strong>（别只停在"零售业"）</td>
+      <td>自动售货机运营 = 无店面卖货，登记在零售</td>
+    </tr>
+    <tr>
+      <td><span class="badge b2">第 2 轮</span></td>
+      <td>住宿和餐饮业</td>
+      <td>住宿业 / 餐饮业</td>
+      <td>电竞酒店、连锁餐饮</td>
+    </tr>
+    <tr>
+      <td><span class="badge b2">第 2 轮</span></td>
+      <td>租赁和商务服务业</td>
+      <td>商务服务业 / 租赁业</td>
+      <td>园区运营、商业运营、会展活动、展厅</td>
+    </tr>
+    <tr>
+      <td><span class="badge b3">第 3 轮</span></td>
+      <td>教育</td>
+      <td>技能培训 / 教育辅助</td>
+      <td>儿童非学科培训（家长在外等 1–2 小时）</td>
+    </tr>
+  </table>
+  <div class="src">门类名称取自国民经济行业分类；励销云二级菜单的具体叫法以你界面上看到的为准。</div>
+</div>
+
+<h2>二、打什么客户 + 关键词填什么（主力动作）</h2>
+<div class="card scroll">
+  <table>
+    <tr><th>梯队</th><th>客户方向</th><th>关键词（名称 / 经营范围里搜）</th><th>打给谁</th><th>主推</th></tr>
+    <tr>
+      <td><span class="badge b1">1</span></td>
+      <td>亲子娱乐场所</td>
+      <td><span class="kw">儿童乐园</span><span class="kw">亲子乐园</span><span class="kw">室内游乐</span><span class="kw">家庭娱乐</span></td>
+      <td>老板、运营负责人</td>
+      <td>销售、长期租赁</td>
+    </tr>
+    <tr>
+      <td><span class="badge b1">1</span></td>
+      <td>设备运营渠道</td>
+      <td><span class="kw">无人零售</span><span class="kw">自动售货</span><span class="kw">售货机运营</span><span class="kw">餐饮设备</span></td>
+      <td>老板、采购、运营</td>
+      <td>销售、渠道合作</td>
+    </tr>
+    <tr>
+      <td><span class="badge b2">2</span></td>
+      <td>网咖电竞酒店</td>
+      <td><span class="kw">网咖</span><span class="kw">电竞馆</span><span class="kw">电竞酒店</span><span class="kw">酒店管理</span></td>
+      <td>老板、总部运营</td>
+      <td>销售、长期租赁</td>
+    </tr>
+    <tr>
+      <td><span class="badge b2">2</span></td>
+      <td>文旅商业场景</td>
+      <td><span class="kw">景区管理</span><span class="kw">文旅运营</span><span class="kw">主题乐园</span><span class="kw">商业运营</span></td>
+      <td>经营负责人、商业运营</td>
+      <td>销售、租赁</td>
+    </tr>
+    <tr>
+      <td><span class="badge b3">3</span></td>
+      <td>园区办公场景</td>
+      <td><span class="kw">产业园管理</span><span class="kw">园区运营</span><span class="kw">物业管理</span><span class="kw">企业服务</span></td>
+      <td>行政、园区运营</td>
+      <td>销售、长期租赁</td>
+    </tr>
+    <tr>
+      <td><span class="badge b3">3</span></td>
+      <td>展厅品牌活动</td>
+      <td><span class="kw">展览展示</span><span class="kw">展厅设计</span><span class="kw">汽车营销</span><span class="kw">品牌推广</span></td>
+      <td>项目经理、市场负责人</td>
+      <td>销售、短期租赁</td>
+    </tr>
+    <tr>
+      <td><span class="badge b3">3</span></td>
+      <td>活动会展公司</td>
+      <td><span class="kw">会议展览</span><span class="kw">会展服务</span><span class="kw">活动执行</span><span class="kw">公关策划</span></td>
+      <td>项目负责人、客户总监</td>
+      <td>短期租赁</td>
+    </tr>
+  </table>
+  <div class="src">7 类方向、关键词、岗位、主推业务 = 【查证事实】来源：公司手册《客户搜索》章（逐表原文已留档）。梯队 1/2/3 = 【推断/判断】，叠了你自己 09-20 陌拜实测（亲子客群匹配、老年客群差）。</div>
+</div>
+
+<div class="callout warnbox">
+  <strong>⚠️ 梯队 3 的两个方向（活动会展、展厅品牌）现在先别放量打。</strong><br>
+  手册给这两个方向主推"<strong>短期租赁</strong>"，但租期 / 租金 / 押金公司至今一个数字都没给（只能口头谈）。线索一开口就问"租一天多少钱"，你在电话里没有答案。<strong>等公司给了租赁数字再放量。</strong>现在火力集中在梯队 1 的"能买断、能长期落地"的方向。
+</div>
+
+<h2>三、电话话术（照读即可）</h2>
+
+<div class="lead" style="margin-bottom:12px;">
+  <b>这通电话只要三个结果：</b>找到负责人 → 判断有没有场地机会 → 加微信 / 约下一步。<br>
+  <b>这通电话不要做的事：</b>不追成交、不报方案、不主动讲回本和日销量、不把"买还是租"放在第一句。第一句只干一件事——问对方的<strong>经营现状</strong>，逼他回答一个具体问题，而不是回你一句"没兴趣"。
+</div>
+
+<div class="scn">
+  <h3>场景 1 ｜ 亲子乐园 / 儿童乐园 / 室内游乐</h3>
+  <div class="row"><span class="lbl open">第一句</span>
+    <p class="tx">您好，我姓赵，北京星具探索的。我们给亲子乐园配无人冰淇淋机，想问一下，咱们园里冰淇淋现在是自己在卖吗？</p></div>
+  <div class="row"><span class="lbl ask">对方说"有，自己在卖" → 接法</span>
+    <p class="tx">那挺好，说明这块有人消费。是自己人做，还是外面承包进去的？<em>（听完再问）明白，那我不抢这块。咱们除了这个店，还有别的场地或者别的店吗？我们主要是在找能加的点位，占地一个多平方，现场需要有220伏电源，具体位置我可以过去帮您看。</em></p></div>
+  <div class="row"><span class="lbl ask">对方说"没有" → 接法</span>
+    <p class="tx">那咱们加不加这种项目，是您能定还是老板定？<em>（不管谁定，接着问）园里有没有一小块地方——出口、休息区、收银台旁边都行？占地一个多平方，现场需要有220伏电源，具体位置我可以过去帮您看。</em></p></div>
+  <div class="row"><span class="lbl ask">对方说"有专门商户在做" → 接法</span>
+    <p class="tx">哦，是承包的还是抽成的？<em>（听完）行，那我不掺和这块。您这儿还有别的位置吗，或者别的店？</em></p></div>
+  <div class="row"><span class="lbl ask">对方问"你们是什么设备" → 接法</span>
+    <p class="tx">一台自助冰淇淋机。顾客自己扫码买、现场做，不用专门安排人收银。占地一个多平方，现场需要有220伏电源，具体位置我可以过去帮您看。<em>（追问"要不要人管"）日常需要有人负责基础清洁和补料，具体操作我们会培训。然后立刻转回：咱们园里冰淇淋这块现在是自己在做吗？</em></p></div>
+  <div class="row"><span class="lbl ask">对方问"多少钱" → 接法</span>
+    <p class="tx">11.98 万，一台，含税含运，含一年维保和售后。<em>（随后主动收口）您要是觉得位置合适，我过去看一眼，帮您看看放哪儿合适。（追问回本）这个跟点位关系太大，电话里我不给您数，说了一定不准。</em></p></div>
+  <div class="row"><span class="lbl no">对方说"没兴趣" → 结束</span>
+    <p class="tx">行，那打扰您了。不硬推，我加您个微信吧，后面您这边想加项目，随时问我。<em>（还是不加）好，那祝您生意好。</em></p></div>
+  <div class="row" style="margin-bottom:0;"><span class="lbl">前台接电话 → 找负责人</span>
+    <p class="tx">您好，麻烦问一下，咱们园里放设备、加项目这类事，是老板在管还是店长在管？<em>（前台问什么事）就是场地合作的事，一两句话，麻烦帮我转一下。（前台说不在）他一般什么时候在？我明天再打。</em></p></div>
+</div>
+
+<div class="scn">
+  <h3>场景 2 ｜ 设备运营渠道（售货机 / 无人零售 / 自助设备 / 餐饮设备运营商）</h3>
+  <div class="src" style="margin:0 0 10px;">这一类不是场地客户，是同行和渠道。<strong>不要按场地话术说</strong>，第一句就问他的业务结构。</div>
+  <div class="row"><span class="lbl open">第一句</span>
+    <p class="tx">您好，我姓赵，北京星具探索的。想跟您对个合作——咱们这边是自己有点位在运营，还是主要给客户供设备？</p></div>
+  <div class="row"><span class="lbl ask">对方说"自己有点位在运营" → 接法</span>
+    <p class="tx">那正好。你们点位主要是哪一类场地？商场、乐园、景区这种人多、待得久的有没有？<em>（听完）冰淇淋这个品类，你们客户问过吗？我们的机器可以走你们的点位，也可以你们这边分销。</em></p></div>
+  <div class="row"><span class="lbl ask">对方说"主要给客户供设备 / 做项目" → 接法</span>
+    <p class="tx">那你们客户里，商场、乐园、景区这类多吗？我们这边是设备方，可以给你们做一个品类补充。</p></div>
+  <div class="row"><span class="lbl ask">对方问"多少钱" → 接法</span>
+    <p class="tx">对外 11.98 万一台，含税含运，含一年维保和售后。<em>（对方接着问渠道价）渠道怎么合作、什么价，得看量，要走内部流程，电话里我不定。</em></p></div>
+  <div class="row"><span class="lbl no">对方说"暂时不需要" → 结束</span>
+    <p class="tx">行，不打扰。我加您个微信，资料发您，后面有合适的项目随时找我。</p></div>
+  <div class="row" style="margin-bottom:0;"><span class="lbl">前台接电话 → 找负责人</span>
+    <p class="tx">您好，麻烦问下，设备采购或者渠道合作这块是谁负责？我这边是做无人冰淇淋设备的，想跟负责人对一下。<em>（前台不清楚）那老板或者运营负责人怎么联系？能不能给我个电话或者微信？</em></p></div>
+</div>
+
+<div class="scn">
+  <h3>场景 3 ｜ 网咖 / 电竞酒店</h3>
+  <div class="row"><span class="lbl open">第一句</span>
+    <p class="tx">您好，我姓赵，北京星具探索的。想了解一下，咱们水吧这块是自己在做吗？</p></div>
+  <div class="row"><span class="lbl ask">对方说"有，自己做吧台" → 接法</span>
+    <p class="tx">现在是服务员点单做，还是顾客自己扫码拿？<em>（听完）有没有一块公区——过道、休息区、包间外面，能再加个自助的？占地一个多平方，现场需要有220伏电源，具体位置我可以过去帮您看。</em></p></div>
+  <div class="row"><span class="lbl ask">对方说"没做 / 外包出去了" → 接法</span>
+    <p class="tx">那这块有没有想过加一个？店里人一坐就是几个小时，中间基本都要喝水吃东西。<em>（然后问）加不加项目，是您定还是老板定？</em></p></div>
+  <div class="row"><span class="lbl ask">对方问"多少钱" → 接法</span>
+    <p class="tx">11.98 万，一台，含税含运，含一年维保和售后。<em>（追问回本）这个跟点位关系太大，电话里我不给您数，说了一定不准。</em></p></div>
+  <div class="row"><span class="lbl no">对方说"没兴趣" → 结束</span>
+    <p class="tx">行，那打扰您了。不硬推，我加您个微信，后面店里想加项目随时问我。</p></div>
+  <div class="row" style="margin-bottom:0;"><span class="lbl">前台接电话 → 找负责人</span>
+    <p class="tx">您好，麻烦问一下，店长或者老板在吗？我这边是做无人冰淇淋设备的，想跟他聊一下店里加个自助点位的事。</p></div>
+</div>
+
+<div class="scn">
+  <h3>场景 4 ｜ 文旅 / 商业场景（景区 / 主题乐园 / 商业运营 / 文旅项目）</h3>
+  <div class="row"><span class="lbl open">第一句</span>
+    <p class="tx">您好，我姓赵，北京星具探索的。想问一下，咱们园区里的消费点位，是招商那边管，还是自己运营？</p></div>
+  <div class="row"><span class="lbl ask">对方说"招商管 / 外包" → 接法</span>
+    <p class="tx">那引进一个自助点位，是走招商流程，还是运营这边点头就行？园里现在还有空的位置吗？</p></div>
+  <div class="row"><span class="lbl ask">对方说"自己运营" → 接法</span>
+    <p class="tx">那有没有想过在游客动线上加一个自助卖冰淇淋的？占地一个多平方，现场需要有220伏电源，具体位置我可以过去帮您看。</p></div>
+  <div class="row"><span class="lbl ask">对方问"多少钱" → 接法</span>
+    <p class="tx">11.98 万，一台，含税含运，含一年维保和售后。<em>（追问回本）这个跟点位关系太大，电话里我不给您数，说了一定不准。</em></p></div>
+  <div class="row"><span class="lbl no">对方说"没兴趣" → 结束</span>
+    <p class="tx">行，那打扰您了。不硬推，我加您个微信，后面有合适的点位随时找我。</p></div>
+  <div class="row" style="margin-bottom:0;"><span class="lbl">前台接电话 → 找负责人</span>
+    <p class="tx">您好，麻烦问一下，园区招商或者商业运营这块谁在负责？我这边是做无人冰淇淋设备的，想跟负责人对一下场地合作的事。</p></div>
+</div>
+
+<div class="card">
+  <h3 style="font-size:15px;margin:0 0 10px;color:var(--brand);">通用追问 —— 四个场景都会碰到（必须照实答，不许编）</h3>
+  <div class="row"><span class="lbl ask">客户问"你们现在装了多少台了？"</span>
+    <p class="tx">跟您说实话，目前还没有正式落地点，实机情况我给您确认。您要是想看，我确认好再给您安排。</p></div>
+  <div class="row"><span class="lbl ask">客户问"一天能卖多少？多久回本？"</span>
+    <p class="tx">这个我真不给您在电话里数——跟点位客流、客群关系太大，我说了也是猜。设备产能是一小时 40 杯，那是机器上限，不代表实际能卖多少。您要是有具体位置，我可以帮您看。</p></div>
+  <div class="row"><span class="lbl ask">客户问"租金多少 / 押金多少 / 怎么分成？"</span>
+    <p class="tx">这块公司在定，我不在电话里给您报。您先把场地情况告诉我，我确认完给您回。</p></div>
+  <div class="row" style="margin-bottom:0;"><span class="lbl no">自己记住（不说出口）</span>
+    <p class="tx">不主动讲回本、利润、日销量；<strong>不编租赁、押金、分成的任何数字</strong>；不提竞品、不贬损同行；价格只有一句——11.98 万一台，含税含运，含一年维保和售后。</p></div>
+</div>
+<div class="src">本组话术已取代旧版（原为手册《首次联系》章三条宣传式话术：报品牌→讲方案→问"有没有需求"，过长且易被直接挂断）。新话术保留手册"先问场景、先找负责人"的骨架，第一句不再出现租赁、方案、兴趣类问法。</div>
+
+<div class="callout okbox">
+  <strong>本卡固定口径（电话里只报这一句）：</strong><br>
+  机型 = 无人冰淇淋机器人；对外主体 = 北京星具探索；价格 = <strong>¥119,800 含税含运、含 1 年维保和售后</strong>。<br>
+  不承诺回本周期、不承诺每天卖多少杯、不提竞品、不贬损同行。
+</div>
+
+<h2>四、每次拨号：五步 + 两个必须</h2>
+<div class="card">
+  <ol class="steps">
+    <li><strong>01 定方向</strong> —— 从上面梯队里挑一个，今天只打它。</li>
+    <li><strong>02 输关键词</strong> —— 名称 / 经营范围里填上面那组词。</li>
+    <li><strong>03 看业务</strong> —— 扫一眼经营范围，判断它到底干嘛的。</li>
+    <li><strong>04 查重复</strong> —— <strong>先查这家在励销云里有没有记录，别重复陌拜。</strong></li>
+    <li><strong>05 找负责人</strong> —— 找不到老板 / 运营负责人，就别往下谈。</li>
+  </ol>
+  <div class="callout warnbox" style="margin-bottom:0;">
+    <strong>电话的 KPI 只有三个</strong>：找到负责人 → 加微信 → 约上门/演示。<br>
+    单价 ¥119,800、必须现场看设备，<strong>电话里不可能成交</strong>，别把目标定成"这通电话卖出去"。
+  </div>
+</div>
+
+<h2>五、打完一轮怎么修正方向</h2>
+<div class="card">
+  <ul>
+    <li><strong>每天查</strong>：新搜的客户有没有核实、有效沟通有没有留下一步、记录有没有写全。</li>
+    <li><strong>每周看</strong>：<strong>哪个关键词带来的有效线索最多</strong> → 下周集中打那一类。</li>
+    <li>落档按 8 阶段推进（待核实 → 已联系 → 有效意向 → 已邀约 → 拜访 → 报价 → 回款），<strong>只把有进展的往下一阶段推</strong>。</li>
+    <li>客户分级：<strong>A</strong> 优先推进（场地明确+找到负责人）｜<strong>B</strong> 持续培育（场景匹配但时间/预算/决策人未定）｜<strong>C</strong> 暂停跟进（无场景、无付费基础、明确拒绝）→ <strong>明确拒绝的客户暂时停止重复陌拜，后续有新的合作理由或新场景，再重新触达</strong>。</li>
+  </ul>
+</div>
+
+<h2>六、本阶段别碰的</h2>
+<div class="card">
+  <ul>
+    <li><strong>别用"金融业"等不相关门类</strong>充数，名单会杂到没法打。</li>
+    <li><strong>别只勾"零售业"整层</strong>——下面全是服装店、便利店、超市、药店。要找设备运营渠道，直接搜关键词，或往下选到"无店铺及其他零售业"。</li>
+    <li><strong>别在电话里编数字</strong>：租金、押金+分成金额、机器重量、公司门牌地址，库里都没有 → 统一答"这个我帮您确认一下"。</li>
+    <li><strong>明确拒绝的客户暂时停止重复陌拜</strong>，后续有新的合作理由或新场景，再重新触达；也别把一个客户的拒绝当成整个行业不行。</li>
+  </ul>
+</div>
+
+<footer>
+  来源：公司手册《客户搜索 / 首次联系 / 励销云跟进》章（逐表原文留档）+ 项目现行口径 2026-09-16。<br>
+  本卡为内部作业用，<strong>禁止外发客户</strong>。<br>
+  生成时间：2026-09-21
+</footer>
+
+</div>
+</body>
+</html>
